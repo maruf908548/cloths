@@ -2,6 +2,8 @@ import 'package:cloths/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'components/search_form.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super(key: key);
 
@@ -41,44 +43,13 @@ class HomeScreen extends StatelessWidget {
               "best Outfits for you",
               style: TextStyle(fontSize: 18),
             ),
-            Form(
-                child: TextFormField(
-              decoration: InputDecoration(
-                  hintText: "Search Items....",
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: outlineInputBorder,
-                  enabledBorder: outlineInputBorder,
-                  focusedBorder: outlineInputBorder,
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: SvgPicture.asset("assets/icons/Search.svg"),
-                  ),
-                  suffixIcon: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: defaultPadding),
-                    child: SizedBox(
-                      height: 48,
-                      width: 48,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: primaryColor,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(defaultBorderRadius)))),
-                        child: SvgPicture.asset("assets/icons/Filter.svg"),
-                      ),
-                    ),
-                  )),
-            ))
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: defaultPadding),
+              child: SearchForm(),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-const outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
-    borderSide: BorderSide.none);
