@@ -2,6 +2,7 @@ import 'package:cloths/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'components/categories.dart';
 import 'components/search_form.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -43,10 +44,11 @@ class HomeScreen extends StatelessWidget {
               "best Outfits for you",
               style: TextStyle(fontSize: 18),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: defaultPadding),
               child: SearchForm(),
             ),
+            const Categories(),
           ],
         ),
       ),

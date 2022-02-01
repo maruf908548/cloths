@@ -15,6 +15,7 @@ class SearchForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
         child: TextFormField(
+      onSaved: (value) {},
       decoration: InputDecoration(
           hintText: "Search Items....",
           filled: true,
@@ -23,21 +24,21 @@ class SearchForm extends StatelessWidget {
           enabledBorder: outlineInputBorder,
           focusedBorder: outlineInputBorder,
           prefixIcon: Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(14),
             child: SvgPicture.asset("assets/icons/Search.svg"),
           ),
           suffixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            padding: const EdgeInsets.symmetric(
+                horizontal: defaultPadding, vertical: defaultPadding / 2),
             child: SizedBox(
               height: 48,
               width: 48,
               child: ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     primary: primaryColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(defaultBorderRadius)))),
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12)))),
+                onPressed: () {},
                 child: SvgPicture.asset("assets/icons/Filter.svg"),
               ),
             ),
@@ -47,5 +48,5 @@ class SearchForm extends StatelessWidget {
 }
 
 const outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+    borderRadius: BorderRadius.all(Radius.circular(12)),
     borderSide: BorderSide.none);
