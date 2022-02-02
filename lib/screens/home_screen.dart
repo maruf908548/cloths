@@ -1,9 +1,10 @@
 import 'package:cloths/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'components/categories.dart';
-import 'components/search_form.dart';
+import 'home/components/categories.dart';
+import 'home/components/new_arrival.dart';
+import 'home/components/popular.dart';
+import 'home/components/search_form.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
               icon: Image.asset("assets/icons/notifications.svg"))
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,6 +50,10 @@ class HomeScreen extends StatelessWidget {
               child: SearchForm(),
             ),
             const Categories(),
+            const SizedBox(height: defaultPadding),
+            const NewArrivalProducts(),
+            const SizedBox(height: defaultPadding),
+            const PopularProducts(),
           ],
         ),
       ),
